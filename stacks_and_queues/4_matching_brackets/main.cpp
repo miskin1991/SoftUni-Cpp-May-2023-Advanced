@@ -7,20 +7,20 @@ bool SearchForStartAndEnd(const std::string& input, int& start, int& end)
     int counter { 0 };
     start = 0;
     end = 0;
-    for(int i { 0 }; i < input.length(); i++)
+    for(size_t i { input.length() - 1 }; i != 0; i--)
     {
-        if (input[i] == '(')
+        if (input[i] == ')')
         {
             if(!counter)
-                start = i;
+                end = i;
             counter++;
         }
-        else if (input[i] == ')')
+        else if (input[i] == '(')
         {
             counter--;
             if (!counter)
             {
-                end = i;
+                start = i;
                 break;
             }
             
@@ -41,7 +41,7 @@ void FindExpression(const std::string& input, std::stack<std::string>& stack)
     
     if (result)
     {
-        remainingStr = input.substr(end + 1);
+        remainingStr = input.substr(0, start);
         std::string currentStr(input.substr(start + 1, end - start - 1));
         stack.push(currentStr);
         FindExpression(currentStr, stack);
