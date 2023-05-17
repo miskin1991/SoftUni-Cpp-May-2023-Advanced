@@ -22,9 +22,10 @@ int main()
 
     while (true)
     {
-        getline(cin, input);
-        stringstream buffer(input);
-        buffer >> action >> plate;
+        // getline(cin, input);
+        // stringstream buffer(input);
+        // buffer >> action >> plate;
+        cin >> action;
         // remove ',' char if exists
         for (char& letter : action)
         {
@@ -41,6 +42,7 @@ int main()
             break;
         else
         {
+            cin >> plate;
             if (action == "in")
             {
                 if(uniqueCars.empty())
