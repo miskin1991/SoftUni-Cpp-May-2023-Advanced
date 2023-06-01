@@ -28,5 +28,7 @@ int main() {
         cout << "empty";
     cout << endl;
 
+    delete[] arr;
+
     return 0;
 }
