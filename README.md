@@ -1,2 +1,2 @@
 # cpp-advanced-may2023
-SoftUni cpp advance course
+SoftUni C++ Advance Course
